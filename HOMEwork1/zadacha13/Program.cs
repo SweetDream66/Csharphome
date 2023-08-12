@@ -2,40 +2,11 @@
 // 645 -> 5
 // 78 -> третьей цифры нет
 // 32679 -> 6
-
-System.Console.WriteLine("Введите число");
-int num = Convert.ToInt32(Console.ReadLine() );
-int digit = num % 10;
-if (num > 99)
-  System.Console.WriteLine(digit);
-else
-  System.Console.WriteLine("Третьей цифры нет" );
-
-
-// int num = WriteLine("Введите число ");
-// int count = num.ToString().Length;
-// Console.Write(MakeArray(num, count));
-// int WriteLine(string message)
-// {
-//     Console.Write(message);
-//     return Convert.ToInt32(Console.ReadLine());
-// }
-// int MakeArray(int a, int b)
-// {
-// int result = 0;
-//     if (b < 3)
-//     {
-//         Console.Write("Третьей цифры нет ");
-//     }
-//     else
-//     {
-//         int c = 1;
-//         for (int i = b; i > 3; i--)
-//         {
-//             c = c * 10;
-//         }
-
-//         result = (a / c) % 10;
-//     }
-// return result;
-// }
+  
+Console.Write("Введите число: ");
+int num = Convert.ToInt32(Console.ReadLine());
+string anyNumberText = Convert.ToString(num);
+if (anyNumberText.Length > 2)
+  Console.WriteLine("третья цифра -> " + anyNumberText[2]);
+else 
+  Console.WriteLine("-> третьей цифры нет");
