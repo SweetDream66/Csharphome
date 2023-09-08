@@ -35,18 +35,22 @@
 // [3, 7, 23, 12] -> 19
 // [-4, -6, 89, 6] -> 0
 
-void FillArray(int[] array)
-{
-    for (int i = 0; i < array.Length; i++)
-        array[i] = new Random().Next(-100,100);
-}
 
-void PrintArray(int[] array)
+int size = 4;
+int[] numbers = new int[size];
+FillArrayRandomNumbers(numbers);
+PrintArray(numbers);
+
+int sumNumbersEvenIndex = 0;
+
+for (int i = 1; i < numbers.Length; i += 2)
 {
-    foreach (int item in array)
-        System.Console.Write($"{item} ");
-    System.Console.WriteLine();
+    sumNumbersEvenIndex += numbers[i];
 }
+Console.Write(sumNumbersEvenIndex);
+
+
+
 void FillArrayRandomNumbers(int[] array)
 {
     for (int i = 0; i < array.Length; i++)
@@ -54,10 +58,13 @@ void FillArrayRandomNumbers(int[] array)
         array[i] = new Random().Next(-100, 101);
     }
 }
-int[] array = new int[12];
-FillArray(array);
-PrintArray(array);
-FillArrayRandomNumbers(array);
-int[] sums = FillArrayRandomNumbers(array);
-System.Console.WriteLine($"Сумма отрицательных элементов равна {sums[0]}");
-System.Console.WriteLine($"Сумма положительных элементов равна {sums[1]}");
+
+void PrintArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + " ");
+    }
+    Console.WriteLine();
+}
+
